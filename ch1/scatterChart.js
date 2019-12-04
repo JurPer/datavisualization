@@ -47,16 +47,21 @@ for (var i = 0; i < healthData.length; i++) {
         healthData[i].spending,
         healthData[i].life
     ]);
-};
+}
 
 window.onload = function () {
+    // eslint-disable-next-line no-undef
     Flotr.draw(this.document.getElementById("chart"),
-        [{ data: this.data, points: { show: true, fillColor: "#1e90ff" } }],
+        [
+            {
+                data: this.data,
+                points: { show: true, fillColor: "#1e90ff" }
+            }
+        ],
         {
+            title: "Health Data",
             xaxis: { min: 5, max: 20 },
             yaxis: { min: 70, max: 85 }
         }
     );
 };
-
-//TODO: STEP 5: LABEL THE DATA. Page 28/44

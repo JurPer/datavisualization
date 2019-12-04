@@ -112,25 +112,26 @@ var temp = [
 var zero = [];
 for (var yr = 1959; yr < 2012; yr++) {
     zero.push([yr, 0]);
-};
+}
 
 window.onload = function () {
+    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"),
         [
             {
-                data: this.zero,
+                data: zero,
                 label: "20<sub>th</sup>-Century Baseline Temperature",
                 lines: { show: true, lineWidth: 1 },
                 shadowSize: 0,
                 color: "#ff0000"
             },
             {
-                data: this.temp,
+                data: temp,
                 label: "Yearly Temperature Difference (°C)",
                 lines: { show: true }
             },
             {
-                data: this.co2,
+                data: co2,
                 label: "CO<sub>2</sub> Concentration (ppm)",
                 lines: { show: true },
                 yaxis: 2
