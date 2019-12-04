@@ -1,0 +1,30 @@
+{
+  "name": "datavisualization",
+  "version": "1.0.0",
+  "description": "data visualization with javascript",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JurPer/datavisualization.git"
+  },
+  "keywords": [
+    "javascript",
+    "data",
+    "visualization",
+    "flotr2",
+    "charts"
+  ],
+  "author": "Juri Perwuschin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JurPer/datavisualization/issues"
+  },
+  "homepage": "https://github.com/JurPer/datavisualization#readme"
+}
