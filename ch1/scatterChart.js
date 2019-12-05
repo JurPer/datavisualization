@@ -1,7 +1,9 @@
-var healthData = [
+var pacificData = [
     { country: "Australia", spending: 9.1, life: 81.8 },
-    { country: "New Zealand", spending: 10.1, life: 81.0 },
+    { country: "New Zealand", spending: 10.1, life: 81.0 }
+];
 
+var europeData = [
     { country: "Austria", spending: 11.0, life: 80.7 },
     { country: "Belgium", spending: 10.5, life: 80.3 },
     { country: "Czech Republic", spending: 7.5, life: 77.7 },
@@ -26,26 +28,70 @@ var healthData = [
     { country: "Sweden", spending: 9.6, life: 81.5 },
     { country: "Switzerland", spending: 11.4, life: 82.6 },
     { country: "Turkey", spending: 6.1, life: 74.3 },
-    { country: "United Kingdom", spending: 9.6, life: 80.6 },
+    { country: "United Kingdom", spending: 9.6, life: 80.6 }
+];
 
+var americasData = [
     { country: "Canada", spending: 11.4, life: 80.8 },
     { country: "Chile", spending: 8.0, life: 79.0 },
     { country: "Mexico", spending: 6.2, life: 75.5 },
-    { country: "United States", spending: 17.6, life: 78.7 },
-
-    { country: "Israel", spending: 7.5, life: 81.7 },
-
-    { country: "Japan", spending: 9.5, life: 83.0 },
-    { country: "Korea", spending: 7.1, life: 80.7 },
-
-    { country: "United States", spending: 17.6, life: 78.7 },
+    { country: "United States", spending: 17.6, life: 78.7 }
 ];
 
-var data = [];
-for (var i = 0; i < healthData.length; i++) {
-    data.push([
-        healthData[i].spending,
-        healthData[i].life
+var mideastData = [
+    { country: "Israel", spending: 7.5, life: 81.7 }
+];
+
+var asiaData = [
+    { country: "Japan", spending: 9.5, life: 83.0 },
+    { country: "Korea", spending: 7.1, life: 80.7 }
+];
+
+var usData = [
+    { country: "United States", spending: 17.6, life: 78.7 }
+];
+
+var pacific = [], europe = [], americas = [], mideast = [], asia = [], us = [];
+
+for (var i = 0; i < pacificData.length; i++) {
+    pacific.push([
+        pacificData[i].spending,
+        pacificData[i].life
+    ]);
+}
+
+for (i = 0; i < europeData.length; i++) {
+    europe.push([
+        europeData[i].spending,
+        europeData[i].life
+    ]);
+}
+
+for (i = 0; i < americasData.length; i++) {
+    americas.push([
+        americasData[i].spending,
+        americasData[i].life
+    ]);
+}
+
+for (i = 0; i < mideastData.length; i++) {
+    mideast.push([
+        mideastData[i].spending,
+        mideastData[i].life
+    ]);
+}
+
+for (i = 0; i < asiaData.length; i++) {
+    asia.push([
+        asiaData[i].spending,
+        asiaData[i].life
+    ]);
+}
+
+for (i = 0; i < usData.length; i++) {
+    us.push([
+        usData[i].spending,
+        usData[i].life
     ]);
 }
 
@@ -53,20 +99,24 @@ window.onload = function () {
     // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"),
         [
-            {
-                data: data,
-                points: { show: true, fillColor: "#1e90ff", fontSize: 22 }
-            }
+            { data: pacific, label: "Pacific", points: { show: true, fillColor: "" } },
+            { data: europe, label: "Europe", points: { show: true, fillColor: "" } },
+            { data: mideast, label: "Middle East", points: { show: true, fillColor: "" } },
+            { data: asia, label: "Asia", points: { show: true, fillColor: "" } },
+            { data: americas, label: "Americas", points: { show: true, fillColor: "" } },
+            { data: us, label: "United States", points: { show: true, fillColor: "" } },
         ],
         {
             title: "Life Expectancy vs. Health-Care Spending",
+            colors: ["#0000ff", "#6495ed", "#006400", "#90ee90", "#ffa500", "#ff0000"],
             subtitle: "(by country, 2010 OECD data)",
             xaxis: {
                 min: 5, max: 20, tickDecimals: 0,
                 title: "Spending as Percentage of GDP",
                 tickFormatter: function (val) { return val + " %" }
             },
-            yaxis: { min: 70, max: 85, tickDecimals: 0, title: "years" }
+            yaxis: { min: 70, max: 85, tickDecimals: 0, title: "years" },
+            legend: { position: "ne" }
         }
     );
 };
