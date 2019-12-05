@@ -51,17 +51,22 @@ for (var i = 0; i < healthData.length; i++) {
 
 window.onload = function () {
     // eslint-disable-next-line no-undef
-    Flotr.draw(this.document.getElementById("chart"),
+    Flotr.draw(document.getElementById("chart"),
         [
             {
-                data: this.data,
-                points: { show: true, fillColor: "#1e90ff" }
+                data: data,
+                points: { show: true, fillColor: "#1e90ff", fontSize: 22 }
             }
         ],
         {
-            title: "Health Data",
-            xaxis: { min: 5, max: 20 },
-            yaxis: { min: 70, max: 85 }
+            title: "Life Expectancy vs. Health-Care Spending",
+            subtitle: "(by country, 2010 OECD data)",
+            xaxis: {
+                min: 5, max: 20, tickDecimals: 0,
+                title: "Spending as Percentage of GDP",
+                tickFormatter: function (val) { return val + " %" }
+            },
+            yaxis: { min: 70, max: 85, tickDecimals: 0, title: "years" }
         }
     );
 };
