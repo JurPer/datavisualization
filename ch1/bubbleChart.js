@@ -28,17 +28,75 @@ function getPoints(sourceArray, filterFunction) {
             || (typeof filterFunction !== "function")
             || filterFunction(sourceArray[i])) {
             result.push([
-                sourceArray[i].west * -1,
+                -sourceArray[i].west,
                 sourceArray[i].north,
                 sourceArray[i].wind
             ]);
         }
     }
+    return result;
 }
 
 window.onload = function () {
     // eslint-disable-next-line no-undef
-    Flotr.draw(document.getElementById("chart"), data, {
-
-    });
+    Flotr.draw(document.getElementById("chart"), [
+        {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind < 39);
+            }),
+            color: "#74add1",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 39) && (obs.wind < 74);
+            }),
+            color: "#abd9e9",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 74) && (obs.wind < 95);
+            }),
+            color: "#ffffbf",
+            label: "Category 1",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 95) && (obs.wind < 110);
+            }),
+            color: "#fee090",
+            label: "Category 2",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 110) && (obs.wind < 130);
+            }),
+            color: "#fdae61",
+            label: "Category 3",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 130) && (obs.wind < 157);
+            }),
+            color: "#f46d43",
+            label: "Category 4",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }, {
+            data: getPoints(katrina, function (obs) {
+                return (obs.wind >= 157);
+            }),
+            color: "#d73027",
+            label: "Category 5",
+            bubbles: { show: true, baseRadius: 0.3, lineWidth: 1 }
+        }
+    ], {
+        grid: {
+            backgroundImage: "ch1/img/gulf.png",
+            horizontalLines: false,
+            verticalLines: false
+        },
+        yaxis: { showLabels: false, min: 23.607, max: 33.657 },
+        xaxis: { showLabels: false, min: -94.298, max: -77.586 },
+        legend: { position: "sw", backgroundOpacity: 0 }
+    }
+    );
 }
