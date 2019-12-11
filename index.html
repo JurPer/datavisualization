@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
     <meta charset="utf-8">
-    <title>
-        Charts
-    </title>
+    <title>Data Visualization</title>
     <style>
-        .flotr-legend {
-            padding: 5px;
-            background-color: #ececec
+        .menu {
+            float: top;
+            /* width: 20%; */
+        }
+
+        .main {
+            float: left;
+            width: 60%;
+            padding: 0 20px;
         }
     </style>
 </head>
 
 <body>
-    <p><strong>Hurricane Katrina 2005: Course and Wind Strength</strong></p>
-    <div id="chart" style="width: 600px;height: 400px;"></div>
-    <p>Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a
-            href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a
-            href="http://openstreetmap.org">OpenStreetMap</a>, under <a
-            href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.</p>
+    <div style="padding:15px;text-align:center;">
+        <h1>Data Visualization with Javascript</h1>
+    </div>
 
-    <script src="flotr2.min.js"></script>
-    <script src="ch1/bubbleChart.js"></script>
+    <div style="overflow:auto">
+        <div class="menu">
+            <a href="ch1/barChart.html" target="iFrameCharts">
+                <img src="ch1/img/barChart.png" alt="Bar chart" style="width:120px;height:80px;border:0;">
+            </a>
+            <a href="ch1/lineChart.html" target="iFrameCharts">
+                <img src="ch1/img/lineChart.png" alt="Line chart" style="width:120px;height:80px;border:0;">
+            </a>
+            <a href="ch1/pieChart.html" target="iFrameCharts">
+                <img src="ch1/img/pieChart.png" alt="Pie chart" style="width:120px;height:80px;border:0;">
+            </a>
+            <a href="ch1/scatterChart.html" target="iFrameCharts">
+                <img src="ch1/img/scatterChart.png" alt="Scatter chart" style="width:120px;height:80px;border:0;">
+            </a>
+            <a href="ch1/bubbleChart.html" target="iFrameCharts">
+                <img src="ch1/img/bubbleChart.png" alt="Bubble chart" style="width:120px;height:80px;border:0;">
+            </a>
+        </div>
+
+        <div class="frame">
+            <iframe src="ch1/barChart.html" name="iFrameCharts"
+                style="width:100%;height:500px;border:5px black;"></iframe>
+        </div>
+
+    </div>
 
 </body>
 

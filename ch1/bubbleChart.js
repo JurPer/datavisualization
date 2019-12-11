@@ -38,6 +38,7 @@ function getPoints(sourceArray, filterFunction) {
 }
 
 window.onload = function () {
+
     // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"), [
         {
@@ -90,7 +91,7 @@ window.onload = function () {
         }
     ], {
         grid: {
-            backgroundImage: "ch1/img/gulf.png",
+            backgroundImage: "img/gulf.png",
             horizontalLines: false,
             verticalLines: false
         },
