@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "data visualization with javascript",
   "main": "index.html",
-  "dependencies": {},
+  "dependencies": {
+    "flot": "^4.1.1"
+  },
   "devDependencies": {
     "eslint": "^6.7.2"
   },

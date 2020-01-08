@@ -10,7 +10,6 @@ var teams = [
 ];
 
 window.onload = function () {
-    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"), wins, {
         title: "Premier League Wins (2011-2012)",
         colors: ["#89AFD2", "#1D1D1D", "#DF021D", "#0E204B", "#E67840"],

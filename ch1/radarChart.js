@@ -46,7 +46,6 @@ var playerData = function (name) {
 };
 
 window.onload = function () {
-    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"), [
         playerData("LeBron James"),
         playerData("Dwayne Wade"),

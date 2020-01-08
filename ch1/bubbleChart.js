@@ -38,8 +38,6 @@ function getPoints(sourceArray, filterFunction) {
 }
 
 window.onload = function () {
-
-    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"), [
         {
             data: getPoints(katrina, function (obs) {

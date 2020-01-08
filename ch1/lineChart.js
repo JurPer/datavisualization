@@ -115,7 +115,6 @@ for (var yr = 1959; yr < 2012; yr++) {
 }
 
 window.onload = function () {
-    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"),
         [
             {

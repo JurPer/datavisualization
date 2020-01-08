@@ -4,7 +4,6 @@ var data = [
 ];
 
 window.onload = function () {
-    // eslint-disable-next-line no-undef
     Flotr.draw(document.getElementById("chart"), data, {
         title: "How much of the World lives on $1.25/Day?",
         colors: ["#ff0000", "#6495ed"],

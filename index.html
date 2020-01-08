@@ -16,6 +16,18 @@
             width: 60%;
             padding: 0 20px;
         }
+
+        img {
+            width: 120px;
+            height: 80px;
+            border: 0;
+        }
+
+        .frame {
+            width: 100%;
+            height: 600px;
+            border: 5px black;
+        }
     </style>
 </head>
 
@@ -24,32 +36,33 @@
         <h1>Data Visualization with Javascript</h1>
     </div>
 
-    <div style="overflow:auto">
+    <div class="main" style="overflow:auto">
         <div class="menu">
             <a href="ch1/barChart.html" target="iFrameCharts">
-                <img src="ch1/img/barChart.png" alt="Bar chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/barChart.png" alt="Bar chart">
             </a>
             <a href="ch1/lineChart.html" target="iFrameCharts">
-                <img src="ch1/img/lineChart.png" alt="Line chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/lineChart.png" alt="Line chart">
             </a>
             <a href="ch1/pieChart.html" target="iFrameCharts">
-                <img src="ch1/img/pieChart.png" alt="Pie chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/pieChart.png" alt="Pie chart">
             </a>
             <a href="ch1/scatterChart.html" target="iFrameCharts">
-                <img src="ch1/img/scatterChart.png" alt="Scatter chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/scatterChart.png" alt="Scatter chart">
             </a>
             <a href="ch1/bubbleChart.html" target="iFrameCharts">
-                <img src="ch1/img/bubbleChart.png" alt="Bubble chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/bubbleChart.png" alt="Bubble chart">
             </a>
             <a href="ch1/radarChart.html" target="iFrameCharts">
-                <img src="ch1/img/radarChart.png" alt="Radar chart" style="width:120px;height:80px;border:0;">
+                <img src="ch1/img/radarChart.png" alt="Radar chart">
+            </a>
+            <a href="ch2/selecting-content.html" target="iFrameCharts">
+                <img src="placeholder.png" alt="Placeholder">
             </a>
         </div>
 
-        <div class="frame">
-            <iframe src="ch1/barChart.html" name="iFrameCharts"
-                style="width:100%;height:500px;border:5px black;"></iframe>
-        </div>
+        <iframe class="frame" src="ch1/barChart.html" name="iFrameCharts">
+        </iframe>
 
     </div>
 
